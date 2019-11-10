@@ -4,12 +4,16 @@ const Payment = require('../models/payment');
 
 //GET list of payments
 router.get('/payments', function(req, res, next) {
-    res.send({type: 'GET'});
+    Payment.find({}).then(function(payments) {
+        res.send(payments);
+    }).catch(next);
 });
 
 //GET a single payment
 router.get('/payments/:id', function(req, res, next) {
-    res.send({type: 'GET'});
+    Payment.findById({_id: req.params.id}).then(function(payment) {
+        res.send(payment);
+    }).catch(next);
 });
 
 //ADD new payment
