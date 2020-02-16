@@ -8,7 +8,9 @@ const mongoose = require('mongoose');
 const app = express();
 
 //Connect to mongodb
-mongoose.connect('mongodb://localhost/payment');
+//mongoose.connect('mongodb://localhost/payment');
+mongoose.connect('mongodb+srv://alexy:hana9753A@cluster0-iyeno.mongodb.net/test?retryWrites=true&w=majority');
+
 mongoose.Promise = global.Promise;
 
 //Receive json or urlencoded data
